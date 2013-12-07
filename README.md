@@ -2,6 +2,8 @@
 
 Wrapper around PHP Reflection to make it easier to use.
 
+[![Latest Stable Version](https://poser.pugx.org/eso/ireflection/v/stable.png)](https://packagist.org/packages/eso/ireflection)
+
 ## Requirements ##
 
 * PHP >= 5.3
