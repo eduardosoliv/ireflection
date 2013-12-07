@@ -12,13 +12,16 @@
 namespace ESO\IReflection\Tests\Models;
 
 /**
- * ModelA
+ * ModelProperty, a model to test properties access.
  */
-class ModelA
+class ModelProperty
 {
     public $prop1 = 5;
     protected $prop2 = 6;
 
+    /**
+     * @return int
+     */
     public function getProp2()
     {
         return $this->prop2;

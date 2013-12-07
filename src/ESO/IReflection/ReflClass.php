@@ -124,6 +124,47 @@ class ReflClass extends \ReflectionClass
     }
 
     /**
+     * @param string      $name   Method name
+     * @param array       $args   The parameters to be passed to the function, as an array
+     * @param object|null $object If object was not given at construction time, it needs to be passed here
+     *
+     * @return mixed
+     */
+    public function invokeMethod($name, array $args = array(), $object = null)
+    {
+        return $this->getMethod($name)->invokeArgs($this->getObject($object), $args);
+    }
+
+    /**
+     * Invoke method in any case, if the method is not accessible, it will change the accessibility and restore
+     * it before return.
+     *
+     * @param string      $name   Method name
+     * @param array       $args   The parameters to be passed to the function, as an array
+     * @param object|null $object If object was not given at construction time, it needs to be passed here
+     *
+     * @return mixed
+     */
+    public function invokeAnyMethod($name, array $args = array(), $object = null)
+    {
+        $method = $this->getMethod($name);
+
+        $changedAccessibility = false;
+        if (!$method->isPublic()) {
+            $method->setAccessible(true);
+            $changedAccessibility = true;
+        }
+
+        $value = $method->invokeArgs($this->getObject($object), $args);
+
+        if ($changedAccessibility) {
+            $method->setAccessible(false);
+        }
+
+        return $value;
+    }
+
+    /**
      * @param object|null $object
      *
      * @return null|object

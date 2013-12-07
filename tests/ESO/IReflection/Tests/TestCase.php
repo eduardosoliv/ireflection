@@ -23,7 +23,7 @@ abstract class TestCase extends PHPUnit_Framework_TestCase
      *
      * @return object
      */
-    public function getModel($name)
+    protected function getModelByName($name)
     {
         $class = $this->getModelClassName($name);
 
@@ -35,8 +35,8 @@ abstract class TestCase extends PHPUnit_Framework_TestCase
      *
      * @return string
      */
-    public function getModelClassName($name)
+    protected function getModelClassNameByName($name)
     {
-        return sprintf('ESO\IReflection\Tests\Models\Model%s', $name);
+        return sprintf('ESO\IReflection\Tests\Models\Model%s', ucfirst($name));
     }
 }
