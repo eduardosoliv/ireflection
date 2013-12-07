@@ -1,0 +1,26 @@
+{
+    "name": "eso/ireflection",
+    "type": "library",
+    "description": "Wrapper around PHP Reflection to make it easier to use",
+    "keywords": ["php", "library", "reflection"],
+    "homepage": "http://github.com/entering/ireflection",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eduardo Oliviveira",
+            "email": "entering@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "squizlabs/php_codesniffer": "~1.5.0",
+        "satooshi/php-coveralls": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "ESO\\IReflection": "src/" }
+    }
+}

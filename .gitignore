@@ -1,0 +1,17 @@
+# Git ignore
+*.swp
+*.swo
+*.bak
+.buildpath
+.project
+.settings/
+.idea/
+.idea
+phpunit.xml
+*~
+composer.lock
+vendor/
+composer.phar
+nbproject/
+tests-results/
+/tmp
