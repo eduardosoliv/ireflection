@@ -25,8 +25,18 @@ abstract class TestCase extends PHPUnit_Framework_TestCase
      */
     public function getModel($name)
     {
-        $class = sprintf('ESO\IReflection\Tests\Models\Class%s', $name);
+        $class = $this->getModelClassName($name);
 
         return new $class();
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return string
+     */
+    public function getModelClassName($name)
+    {
+        return sprintf('ESO\IReflection\Tests\Models\Model%s', $name);
     }
 }

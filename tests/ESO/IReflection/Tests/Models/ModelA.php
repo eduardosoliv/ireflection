@@ -12,9 +12,15 @@
 namespace ESO\IReflection\Tests\Models;
 
 /**
- * ClassA
+ * ModelA
  */
-class ClassA
+class ModelA
 {
-    public $a = 5;
+    public $prop1 = 5;
+    protected $prop2 = 6;
+
+    public function getProp2()
+    {
+        return $this->prop2;
+    }
 }

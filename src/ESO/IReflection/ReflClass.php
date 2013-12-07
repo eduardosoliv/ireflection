@@ -24,7 +24,7 @@ class ReflClass extends \ReflectionClass
     protected $object;
 
     /**
-     * @param mixed $argument Either a string containing the name of the class to reflect, or an object.
+     * @param string|object $argument Either a string containing the name of the class to reflect, or an object.
      */
     public function __construct($argument)
     {
@@ -36,15 +36,7 @@ class ReflClass extends \ReflectionClass
     }
 
     /**
-     * @return bool
-     */
-    protected function hasObject()
-    {
-        return is_object($this->object);
-    }
-
-    /**
-     * @param mixed $argument
+     * @param string|object $argument Either a string containing the name of the class to reflect, or an object.
      *
      * @return ReflClass
      */
@@ -54,12 +46,12 @@ class ReflClass extends \ReflectionClass
     }
 
     /**
-     * Gets value from property
+     * Gets value from property.
      *
      * @param string      $name   Property name
      * @param object|null $object If object was not given at construction time, it needs to be passed here
      *
-     * @return mixed
+     * @return mixed Property value
      */
     public function getPropertyValue($name, $object = null)
     {
@@ -69,13 +61,66 @@ class ReflClass extends \ReflectionClass
     /**
      * Set property value
      *
-     * @param string     $name   Property name
-     * @param mixed       $value  The value to set
+     * @param string      $name   Property name
+     * @param mixed       $value  The new value to set
      * @param object|null $object If object was not given at construction time, it needs to be passed here
      */
     public function setPropertyValue($name, $value, $object = null)
     {
         $this->getProperty($name)->setValue($this->getObject($object), $value);
+    }
+
+    /**
+     * Get property value in any case, if the property is not accessible, it will change the accessibility and restore
+     * it before return.
+     *
+     * @param string      $name   Property name
+     * @param object|null $object If object was not given at construction time, it needs to be passed here
+     *
+     * @return mixed Property value
+     */
+    public function getAnyPropertyValue($name, $object = null)
+    {
+        $property = $this->getProperty($name);
+
+        $changedAccessibility = false;
+        if (!$property->isPublic()) {
+            $property->setAccessible(true);
+            $changedAccessibility = true;
+        }
+
+        $value = $property->getValue($this->getObject($object));
+
+        if ($changedAccessibility) {
+            $property->setAccessible(false);
+        }
+
+        return $value;
+    }
+
+    /**
+     * Set property value in any case, if the property is not accessible, it will change the accessibility and restore
+     * it before return.
+     *
+     * @param string      $name
+     * @param mixed       $value  The new value to set
+     * @param object|null $object If object was not given at construction time, it needs to be passed here
+     */
+    public function setAnyPropertyValue($name, $value, $object = null)
+    {
+        $property = $this->getProperty($name);
+
+        $changedAccessibility = false;
+        if (!$property->isPublic()) {
+            $property->setAccessible(true);
+            $changedAccessibility = true;
+        }
+
+        $property->setValue($this->getObject($object), $value);
+
+        if ($changedAccessibility) {
+            $property->setAccessible(false);
+        }
     }
 
     /**
