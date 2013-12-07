@@ -20,7 +20,7 @@ Just create a `composer.json` file for your project:
 }
 ```
 
-**Tip:** browse [`entering/compress`](https://packagist.org/packages/eso/ireflection) page to choose a stable version to use, avoid the `@stable` meta constraint.
+**Tip:** browse [`entering/ireflection`](https://packagist.org/packages/eso/ireflection) page to choose a stable version to use, avoid the `@stable` meta constraint.
 
 And run these two commands to install it:
 
@@ -41,7 +41,7 @@ require 'vendor/autoload.php';
 
 ## Contributing ##
 
-[All contributors](https://github.com/ebidtech/compress/contributors)
+[All contributors](https://github.com/entering/ireflection/contributors)
 
 See CONTRIBUTING file.
 
