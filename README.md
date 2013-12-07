@@ -2,7 +2,7 @@
 
 Wrapper around PHP Reflection to make it easier to use.
 
-[![Latest Stable Version](https://poser.pugx.org/eso/ireflection/v/stable.png)](https://packagist.org/packages/eso/ireflection)
+[![Latest Stable Version](https://poser.pugx.org/eso/ireflection/v/stable.png)](https://packagist.org/packages/eso/ireflection) [![Build Status](https://travis-ci.org/entering/ireflection.png?branch=master)](https://travis-ci.org/entering/ireflection)
 
 ## Requirements ##
 
