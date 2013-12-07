@@ -78,7 +78,7 @@ class ReflClassPropertyTest extends TestCase
     public function testSetAnyPropertyValuePublicProperty()
     {
         $newValue = 30;
-        $model = $this->getModel('A');
+        $model = $this->getModel();
 
         ReflClass::create($model)->setAnyPropertyValue('prop1', $newValue);
 
