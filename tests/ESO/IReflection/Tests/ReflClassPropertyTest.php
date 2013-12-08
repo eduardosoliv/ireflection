@@ -16,6 +16,8 @@ use ESO\IReflection\Tests\Models\ModelProperty;
 
 /**
  * ReflClassPropertyTest
+ *
+ * @author Eduardo Oliveira <entering@gmail.com>
  */
 class ReflClassPropertyTest extends TestCase
 {
@@ -92,6 +94,17 @@ class ReflClassPropertyTest extends TestCase
 
         ReflClass::create($model)->setAnyPropertyValue('prop2', $newValue);
         $this->assertEquals($newValue, $model->getProp2());
+    }
+
+    public function testSetChaining()
+    {
+        $model = $this->getModel();
+
+        ReflClass::create($model)->setPropertyValue('prop1', 30)
+                                 ->setAnyPropertyValue('prop2', 40);
+
+        $this->assertEquals(30, $model->prop1);
+        $this->assertEquals(40, $model->getProp2());
     }
 
     /**

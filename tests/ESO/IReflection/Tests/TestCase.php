@@ -25,7 +25,7 @@ abstract class TestCase extends PHPUnit_Framework_TestCase
      */
     protected function getModelByName($name)
     {
-        $class = $this->getModelClassName($name);
+        $class = $this->getModelClassNameByName($name);
 
         return new $class();
     }

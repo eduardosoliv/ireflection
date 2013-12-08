@@ -13,6 +13,8 @@ namespace ESO\IReflection\Tests\Models;
 
 /**
  * ModelMethod, a model to tests methods access.
+ *
+ * @author Eduardo Oliveira <entering@gmail.com>
  */
 class ModelMethod
 {

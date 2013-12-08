@@ -13,6 +13,8 @@ namespace ESO\IReflection\Tests\Models;
 
 /**
  * ModelProperty, a model to test properties access.
+ *
+ * @author Eduardo Oliveira <entering@gmail.com>
  */
 class ModelProperty
 {

@@ -64,10 +64,14 @@ class ReflClass extends \ReflectionClass
      * @param string      $name   Property name
      * @param mixed       $value  The new value to set
      * @param object|null $object If object was not given at construction time, it needs to be passed here
+     *
+     * @return ReflClass
      */
     public function setPropertyValue($name, $value, $object = null)
     {
         $this->getProperty($name)->setValue($this->getObject($object), $value);
+
+        return $this;
     }
 
     /**
@@ -105,6 +109,8 @@ class ReflClass extends \ReflectionClass
      * @param string      $name
      * @param mixed       $value  The new value to set
      * @param object|null $object If object was not given at construction time, it needs to be passed here
+     *
+     * @return ReflClass
      */
     public function setAnyPropertyValue($name, $value, $object = null)
     {
@@ -121,6 +127,8 @@ class ReflClass extends \ReflectionClass
         if ($changedAccessibility) {
             $property->setAccessible(false);
         }
+
+        return $this;
     }
 
     /**

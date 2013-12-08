@@ -16,6 +16,8 @@ use ESO\IReflection\ReflClass;
 
 /**
  * ReflClassMethodTest
+ *
+ * @author Eduardo Oliveira <entering@gmail.com>
  */
 class ReflClassMethodTest extends TestCase
 {
