@@ -96,6 +96,16 @@ class ReflClassPropertyTest extends TestCase
         $this->assertEquals($newValue, $model->getProp2());
     }
 
+    public function testSetAnyPropertiesValues()
+    {
+        $model = $this->getModel();
+
+        ReflClass::create($model)->setAnyPropertiesValues(array('prop1' => 20, 'prop2' => 30));
+
+        $this->assertEquals(20, $model->prop1);
+        $this->assertEquals(30, $model->getProp2());
+    }
+
     public function testSetChaining()
     {
         $model = $this->getModel();

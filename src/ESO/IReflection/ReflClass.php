@@ -86,18 +86,8 @@ class ReflClass extends \ReflectionClass
     public function getAnyPropertyValue($name, $object = null)
     {
         $property = $this->getProperty($name);
-
-        $changedAccessibility = false;
-        if (!$property->isPublic()) {
-            $property->setAccessible(true);
-            $changedAccessibility = true;
-        }
-
+        $property->setAccessible(true);
         $value = $property->getValue($this->getObject($object));
-
-        if ($changedAccessibility) {
-            $property->setAccessible(false);
-        }
 
         return $value;
     }
@@ -115,20 +105,21 @@ class ReflClass extends \ReflectionClass
     public function setAnyPropertyValue($name, $value, $object = null)
     {
         $property = $this->getProperty($name);
-
-        $changedAccessibility = false;
-        if (!$property->isPublic()) {
-            $property->setAccessible(true);
-            $changedAccessibility = true;
-        }
-
+        $property->setAccessible(true);
         $property->setValue($this->getObject($object), $value);
 
-        if ($changedAccessibility) {
-            $property->setAccessible(false);
-        }
-
         return $this;
+    }
+
+    /**
+     * @param array       $namesValues An array the key property name and the value the new value to that property
+     * @param object|null $object      If object was not given at construction time, it needs to be passed here
+     */
+    public function setAnyPropertiesValues(array $namesValues, $object = null)
+    {
+        foreach ($namesValues as $name => $value) {
+            $this->setAnyPropertyValue($name, $value, $object);
+        }
     }
 
     /**
@@ -156,18 +147,8 @@ class ReflClass extends \ReflectionClass
     public function invokeAnyMethod($name, array $args = array(), $object = null)
     {
         $method = $this->getMethod($name);
-
-        $changedAccessibility = false;
-        if (!$method->isPublic()) {
-            $method->setAccessible(true);
-            $changedAccessibility = true;
-        }
-
+        $method->setAccessible(true);
         $value = $method->invokeArgs($this->getObject($object), $args);
-
-        if ($changedAccessibility) {
-            $method->setAccessible(false);
-        }
 
         return $value;
     }
