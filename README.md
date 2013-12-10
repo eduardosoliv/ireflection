@@ -85,16 +85,18 @@ Other example, invoke a method:
 class A { function sum($a, $b) { return $a + $b; } }
 $a = new A();
 
-echo ReflClass::create($a)->invokeAnyMethod('sum', array(10, 3)); // prints 8
+$method = (new \ReflectionClass($a))->getMethod('sum');
+$method->setAccessible(true);
+echo $method->invokeArgs($a, array(5, 3)) . "\n"; // prints 8
 ```
+
+Using ReflClass:
 
 ```php
 class A { function sum($a, $b) { return $a + $b; } }
 $a = new A();
 
-$method = (new \ReflectionClass($a))->getMethod('sum');
-$method->setAccessible(true);
-echo $method->invokeArgs($a, array(5, 3)) . "\n"; // prints 8
+echo ReflClass::create($a)->invokeAnyMethod('sum', array(10, 3)); // prints 8
 ```
 
 ## Contributing ##
