@@ -22,7 +22,7 @@ Just create a `composer.json` file for your project:
 }
 ```
 
-**Tip:** browse [`entering/ireflection`](https://packagist.org/packages/eso/ireflection) page to choose a stable version to use, avoid the `@stable` meta constraint.
+**Tip:** browse [`eso/ireflection`](https://packagist.org/packages/eso/ireflection) page to choose a stable version to use, avoid the `@stable` meta constraint.
 
 And run these two commands to install it:
 
