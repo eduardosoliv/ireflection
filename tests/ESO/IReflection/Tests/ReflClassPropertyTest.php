@@ -117,6 +117,15 @@ class ReflClassPropertyTest extends TestCase
         $this->assertEquals(40, $model->getProp2());
     }
 
+    public function testSetGetAnyStaticPropertyValue()
+    {
+        $newValue = 10;
+        $refl = ReflClass::create($this->getModelClassName());
+        $this->assertEquals(5, $refl->getAnyStaticPropertyValue('prop3'));
+        $refl->setAnyStaticPropertyValue('prop3', $newValue);
+        $this->assertEquals($newValue, $refl->getAnyStaticPropertyValue('prop3'));
+    }
+
     /**
      * @return ModelProperty
      */

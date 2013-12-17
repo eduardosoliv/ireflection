@@ -123,6 +123,35 @@ class ReflClass extends \ReflectionClass
     }
 
     /**
+     * @param string $name
+     *
+     * @return mixed
+     */
+    public function getAnyStaticPropertyValue($name)
+    {
+        $property = $this->getProperty($name);
+        $property->setAccessible(true);
+
+        return $property->getValue();
+    }
+
+    /**
+     * @param string $name
+     * @param mixed  $value
+     *
+     * @return ReflClass
+     */
+    public function setAnyStaticPropertyValue($name, $value)
+    {
+        $property = $this->getProperty($name);
+        $property->setAccessible(true);
+
+        $property->setValue($value);
+
+        return $this;
+    }
+
+    /**
      * @param string      $name   Method name
      * @param array       $args   The parameters to be passed to the function, as an array
      * @param object|null $object If object was not given at construction time, it needs to be passed here

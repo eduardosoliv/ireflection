@@ -20,6 +20,7 @@ class ModelProperty
 {
     public $prop1 = 5;
     protected $prop2 = 6;
+    protected static $prop3 = 5;
 
     /**
      * @return int
