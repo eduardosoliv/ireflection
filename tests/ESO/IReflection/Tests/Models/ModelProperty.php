@@ -29,4 +29,12 @@ class ModelProperty
     {
         return $this->prop2;
     }
+
+    /**
+     * @return int
+     */
+    public static function getProp3()
+    {
+        return self::$prop3;
+    }
 }
