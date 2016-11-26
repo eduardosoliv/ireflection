@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/entering/ireflection.png?branch=master)](https://travis-ci.org/entering/ireflection)
 [![Coverage Status](https://coveralls.io/repos/entering/ireflection/badge.png?branch=master)](https://coveralls.io/r/entering/ireflection?branch=master)
 
-Wrapper around PHP Reflection to make it easier to use.
+Wrapper around PHP Reflection to make it easier to use!
 
 ## Requirements ##
 
