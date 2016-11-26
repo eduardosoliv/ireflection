@@ -2,7 +2,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/eso/ireflection/v/stable.png)](https://packagist.org/packages/eso/ireflection)
 [![Build Status](https://travis-ci.org/entering/ireflection.png?branch=master)](https://travis-ci.org/entering/ireflection)
-[![Coverage Status](https://coveralls.io/repos/entering/ireflection/badge.png?branch=master)](https://coveralls.io/r/entering/ireflection?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/entering/ireflection/badge.svg?branch=master)](https://coveralls.io/github/entering/ireflection?branch=master)
 
 Wrapper around PHP Reflection to make it easier to use.
 
