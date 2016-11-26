@@ -1,6 +1,8 @@
 # IReflection #
 
-[![Latest Stable Version](https://poser.pugx.org/eso/ireflection/v/stable.png)](https://packagist.org/packages/eso/ireflection) [![Build Status](https://travis-ci.org/entering/ireflection.png?branch=master)](https://travis-ci.org/entering/ireflection) [![Coverage Status](https://coveralls.io/repos/entering/ireflection/badge.png?branch=master)](https://coveralls.io/r/entering/ireflection?branch=master) [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/entering/ireflection/badges/quality-score.png?s=b49478a20b162d700218ad3561c73956da5de7cb)](https://scrutinizer-ci.com/g/entering/ireflection/)
+[![Latest Stable Version](https://poser.pugx.org/eso/ireflection/v/stable.png)](https://packagist.org/packages/eso/ireflection)
+[![Build Status](https://travis-ci.org/entering/ireflection.png?branch=master)](https://travis-ci.org/entering/ireflection)
+[![Coverage Status](https://coveralls.io/repos/entering/ireflection/badge.png?branch=master)](https://coveralls.io/r/entering/ireflection?branch=master)
 
 Wrapper around PHP Reflection to make it easier to use.
 
