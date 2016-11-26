@@ -1,10 +1,12 @@
 language: php
 
-php:
-  - 5.3
-  - 5.4
-  - 5.5
-  - 5.6
+matrix:
+    include:
+        - php: 5.3
+        - php: 5.4
+        - php: 5.5
+          env: COVERALLS=yes
+        - php: 5.6
 
 before_script:
   - curl -s http://getcomposer.org/installer | php
@@ -16,4 +18,4 @@ script:
 after_script:
   - vendor/bin/phpcs -v --report=summary --standard=PSR1,PSR2 src/ tests/
   - vendor/bin/phpmd src/,tests/ text codesize,unusedcode,design
-  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.5" ]]; then php composer.phar require --dev satooshi/php-coveralls dev-master && vendor/bin/coveralls -vvv; fi
+  - if [ "$COVERALLS" = "yes" ]; then php composer.phar require --dev satooshi/php-coveralls dev-master && vendor/bin/coveralls -vvv; fi
