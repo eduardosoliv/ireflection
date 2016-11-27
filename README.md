@@ -8,7 +8,7 @@ Wrapper around PHP Reflection to make it easier to use.
 
 ## Requirements ##
 
-* PHP >= 5.3
+* PHP >= 5.4
 
 ## Installation ##
 
