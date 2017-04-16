@@ -189,6 +189,6 @@ class ReflClass extends \ReflectionClass
      */
     protected function getObject($object = null)
     {
-        return !is_object($object) ? $this->object : $object;
+        return !is_object($object)? $this->object : $object;
     }
 }
