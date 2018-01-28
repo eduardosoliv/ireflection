@@ -77,8 +77,8 @@ echo $refClass->getAnyPropertyValue('b') . "\n"; // prints 10
 
 $refClass->setAnyPropertiesValues(array('a' => 10, 'b' => 20));
 
-echo $refClass->getAnyPropertyValue('a') . "\n"; // prints 5
-echo $refClass->getAnyPropertyValue('b') . "\n"; // prints 10
+echo $refClass->getAnyPropertyValue('a') . "\n"; // prints 10
+echo $refClass->getAnyPropertyValue('b') . "\n"; // prints 20
 ```
 
 Other example, invoke a method:
